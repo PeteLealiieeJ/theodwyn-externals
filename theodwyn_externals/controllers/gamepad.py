@@ -1,6 +1,7 @@
 import threading
 import struct
 import cv2                              as cv
+from numpy.typing                       import NDArray
 from queue                              import Queue, Full
 from theodwyn.networks.comm_prot        import ZMQRadio
 from theodwyn.controllers.gamepad       import XboxGamePad
@@ -251,7 +252,7 @@ class ExternalXboxGamePad_Processor( ExternalXboxGamePad ):
 
     def processLT( 
         self, 
-        frame : cv.typing.MatLike 
+        frame : NDArray
     ) -> None:
         """
         Process incurred on images queue from Left-Trigger Pull
@@ -259,7 +260,7 @@ class ExternalXboxGamePad_Processor( ExternalXboxGamePad ):
     
     def processRT( 
         self, 
-        frame : cv.typing.MatLike 
+        frame : NDArray
     ) -> None:
         """
         Process incurred on images queue from Right-Trigger Pull
