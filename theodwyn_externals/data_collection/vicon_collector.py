@@ -104,7 +104,7 @@ class ViconCollector(_RohanThreading):
         """
         Pull data from the vicon system associated with object specified by name in the initializer
         """
-        return self.vicon_cnnct.recv_pose(object_name=self.object_name)
+        return self.vicon_cnnct.recv_pose(object_name=self.object_name, ret_quat=False)
     
 
     def write_to_file( self, data : ViconData ):
